@@ -1,4 +1,4 @@
-name: ci
+name: buildkit
 
 on:
   push:
@@ -27,5 +27,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./2.4
+          platforms: linux/arm/v7
           push: true
           tags: user/app:latest
