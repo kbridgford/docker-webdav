@@ -29,4 +29,4 @@ jobs:
           context: ./2.4
           platforms: linux/arm/v7
           push: true
-          tags: user/app:latest
+          tags: kwkaze/webdav:latest
