@@ -10,8 +10,7 @@ jobs:
 
   build:
 
-    runs-on: self-hosted:ARM
-
+    runs-on: [self-hosted, ARM32]
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
