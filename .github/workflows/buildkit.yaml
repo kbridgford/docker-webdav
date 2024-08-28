@@ -27,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./2.4
-          platforms: linux/arm/v7
+          platforms: linux/arm64
           push: true
           tags: kwkaze/webdav:latest
