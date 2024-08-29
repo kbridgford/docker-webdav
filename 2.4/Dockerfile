@@ -1,4 +1,4 @@
-FROM arm64v8/httpd:bookworm
+FROM arm64v8/httpd:alpine
 
 # These variables are inherited from the httpd:alpine image:
 # ENV HTTPD_PREFIX /usr/local/apache2
@@ -47,7 +47,8 @@ RUN set -ex; \
     ln -s ../conf-available/dav.conf "conf/conf-enabled"; \
     ln -s ../sites-available/default.conf "conf/sites-enabled"; \
     # Install openssl if we need to generate a self-signed certificate.
-    # apk add --no-cache openssl
+    apk add --no-cache openssl
+    apk add --no-cache apr-util-dbm_db
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 EXPOSE 80/tcp 443/tcp
